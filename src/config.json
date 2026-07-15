@@ -1,6 +1,6 @@
 
 {
-  "api_url": "https://tiktokmodcloudv1-ชื่อของคุณ.vercel.app",
+  "api_url": "https://tiktokmodcloudv1.vercel.app/",
   "selenium_remote_provider": "",
   "cookies_file": "cookies.json",
   "telegram": {
