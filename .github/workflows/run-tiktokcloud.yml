@@ -1,0 +1,30 @@
+name: Run TikTok Mod Cloud with Bun
+
+# ตั้งค่าให้ทำงานเมื่อมีการ Push โค้ดขึ้นไปบนสาขา main (หรือรันแบบกดมือเองได้)
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: # เปิดให้สามารถกดปุ่ม Run Workflow เองได้บนหน้าเว็บ GitHub
+
+jobs:
+  run-project:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. ดึงโค้ดจาก Repository ของคุณลงมาที่เครื่องเซิร์ฟเวอร์จำลอง
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. ติดตั้งระบบ Bun บนเซิร์ฟเวอร์ GitHub Actions
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest # หรือระบุเวอร์ชัน เช่น 1.1.0
+
+      # 3. ติดตั้ง Dependencies (Library ต่าง ๆ)
+      - name: Install Dependencies
+        run: bun install
+
+      # 4. สั่งรันไฟล์หลักของคุณ (เปลี่ยนคำสั่งตามไฟล์จริงของคุณ เช่น index.ts หรือ index.js)
+      - name: Run TikTok Mod Cloud
+        run: bun index.ts 
