@@ -1,1 +1,11 @@
 
+{
+  "api_url": "https://tiktokmodcloudv1-ชื่อของคุณ.vercel.app",
+  "selenium_remote_provider": "",
+  "cookies_file": "cookies.json",
+  "telegram": {
+    "enabled": true,
+    "token": "8631364707:AAENt559QFdBssEW0Vh4GmzAb_e2Ou6QmuQ",
+    "chat_id": "1846691123"
+  }
+}
